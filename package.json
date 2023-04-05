@@ -1,0 +1,45 @@
+{
+  "name": "react-network-notifier",
+  "version": "1.0.0",
+  "description": "A fun and witty React component that displays humorous messages and images when the internet connection is lost, keeping your users entertained while they wait for the connection to return.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-github-username/network-notifier.git"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "network",
+    "internet",
+    "offline",
+    "connection",
+    "notification",
+    "notifier",
+    "humor",
+    "fun",
+    "witty",
+    "images",
+    "messages",
+    "SSR",
+    "SEO"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-github-username/network-notifier/issues"
+  },
+  "homepage": "https://github.com/your-github-username/network-notifier#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "microbundle": "^0.15.1",
+    "typescript": "^5.0.3"
+  }
+}
