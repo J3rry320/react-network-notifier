@@ -2,15 +2,22 @@
   "name": "react-network-notifier",
   "version": "1.0.0",
   "description": "A fun and witty React component that displays humorous messages and images when the internet connection is lost, keeping your users entertained while they wait for the connection to return.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "source": "src/index.tsx",
   "scripts": {
-    "build": "tsc"
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
+    "dev": "microbundle watch",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-github-username/network-notifier.git"
+    "url": "git+https://github.com/J3rry320/react-network-notifier"
   },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/lib.umd.js",
+  "module": "./dist/lib.module.js",
+  "files": [
+    "dist/"
+  ],
   "keywords": [
     "react",
     "next",
@@ -28,12 +35,12 @@
     "SSR",
     "SEO"
   ],
-  "author": "Your Name",
+  "author": "J3rry Sa7pa7hy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-github-username/network-notifier/issues"
+    "url": "https://github.com/J3rry320/react-network-notifier/issues"
   },
-  "homepage": "https://github.com/your-github-username/network-notifier#readme",
+  "homepage": "https://github.com/J3rry320/react-network-notifier#readme",
   "dependencies": {
     "react": "^18.2.0"
   },
