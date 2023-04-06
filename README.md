@@ -7,7 +7,7 @@ A fun and witty React component that displays humorous messages and images when 
 ## Features
 
 - 🎭 Randomly selects a funny message and image from a pool.
-- 🎨 Easily customizable with custom messages, images, and styles.
+- 🎨 Easily customizable with custom messages, ascii art's and styles.
 - 📱 Responsive design.
 - 🚀 Supports SSR for Next.js applications.
 - 🎯 Lightweight and easy to integrate.
@@ -56,8 +56,10 @@ const customMessages = [
 ];
 
 const customImages = [
-  'your-custom-image-1.png',
-  'your-custom-image-2.png',
+ `
+  ( ͡° ͜ʖ ͡°)
+  `,
+  
   // Add more custom images
 ];
 
