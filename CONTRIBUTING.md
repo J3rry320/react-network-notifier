@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for considering contributing to markdown-parser-react! We welcome any contributions that improve the quality of the code, fix bugs, or add new features to the project.
+Thank you for considering contributing to react-network-notifier! We welcome any contributions that improve the quality of the code, fix bugs, or add new features to the project.
 
 ## Code of Conduct
 
@@ -8,7 +8,7 @@ We expect all contributors to adhere to our [Code of Conduct](https://github.com
 
 ## How to Contribute
 
-Here are the general steps to follow when contributing to markdown-parser-react:
+Here are the general steps to follow when contributing to react-network-notifier:
 
 1.  Fork the repository and create a new branch for your contribution.
 2.  Make your changes or improvements in the new branch.
@@ -20,17 +20,17 @@ Here are the general steps to follow when contributing to markdown-parser-react:
 
 To set up the project for local development, follow these steps:
 
-1.  Clone the repository: `git clone https://github.com/{username}/{repo}.git`
+1.  Clone the repository: `git clone https://github.com/J3rry320/react-network-notifier`
 2.  Install dependencies: `npm install` or `yarn`
 3.  Run the dev server: `npm run dev` or `yarn dev`
 
 ## Reporting Bugs
 
-If you encounter a bug while using markdown-parser-react, please create a new issue on our [GitHub repository](https://github.com/%7Busername%7D/%7Brepo%7D/issues) and include a clear description of the problem, the expected behavior, and any relevant code examples or screenshots.
+If you encounter a bug while using react-network-notifier, please create a new issue on our [GitHub repository](https://github.com/J3rry320/react-network-notifier/issues) and include a clear description of the problem, the expected behavior, and any relevant code examples or screenshots.
 
 ## Feature Requests
 
-If you have an idea for a new feature or improvement, feel free to create a new issue on our [GitHub repository](https://github.com/%7Busername%7D/%7Brepo%7D/issues) and describe the feature or improvement in detail.
+If you have an idea for a new feature or improvement, feel free to create a new issue on our [GitHub repository](https://github.com/J3rry320/react-network-notifier/issues) and describe the feature or improvement in detail.
 
 ## Pull Request Process
 
@@ -44,4 +44,4 @@ When submitting a pull request, please follow these guidelines:
 
 Once you have submitted your pull request, one of the maintainers will review it and provide feedback or merge it if it meets our standards.
 
-Thank you for contributing to markdown-parser-react!
+Thank you for contributing to react-network-notifier!
