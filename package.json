@@ -2,10 +2,9 @@
   "name": "react-network-notifier",
   "version": "1.2.1",
   "description": "A fun and witty React component that displays humorous messages and images when the internet connection is lost, keeping your users entertained while they wait for the connection to return.",
-  "source": "src/index.tsx",
   "scripts": {
-    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
-    "dev": "microbundle watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -13,8 +12,15 @@
     "url": "git+https://github.com/J3rry320/react-network-notifier"
   },
   "types": "./dist/index.d.ts",
-  "main": "./dist/lib.umd.js",
-  "module": "./dist/lib.module.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist/"
   ],
@@ -41,12 +47,14 @@
     "url": "https://github.com/J3rry320/react-network-notifier/issues"
   },
   "homepage": "https://github.com/J3rry320/react-network-notifier#readme",
-  "dependencies": {
-    "react": "^18.2.0"
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^25.3.2",
     "@types/react": "^18.0.33",
-    "microbundle": "^0.15.1",
+    "tsup": "^8.3.5",
     "typescript": "^5.0.3"
   }
 }
