@@ -16,46 +16,38 @@ export const messages = [
   "Looks like you're disconnected. Here's a squirrel to remind you that there's a whole world outside your screen.",
 ];
 
-export const images = [
-  `
-  ( ͡° ͜ʖ ͡°)
-  `,
-  `
-   ̿ ̿ ̿'̿'\\̵͇̿̿\\з=(•_•)=ε/̵͇̿̿/'̿'̿ ̿
-  `,
-  `
-  ಠ_ಠ
-  `,
-  `
-  ┬─┬ノ( º _ ºノ)
-  `,
-  `
-  (╯°□°）╯︵ ┻━┻
-  `,
-  `
-  (づ｡◕‿‿◕｡)づ
-  `,
-  `
-   ┌─┐
-   ┴─┴
-  ɷ◡ಠ
-  `,
-  "    /\\_/\\\n   / o o \\\n  /   ^   \\\n /  _____  \\\n/____|____\\|\n\nLooks like your internet connection went down. Here's a cat to keep you company. Meow!",
-  // ASCII art 2
-  "   ,#####,\n   #_   _#\n   |a` `a|\n   |  u  |\n   \\  =  /\n   |\\___/|\n  /  \\_/  \\\n\nOh no! Your internet connection is lost. How about a robot to help fix things?",
-  // ASCII art 3
-  "   /\\_/\\\n  / o o \\\n (   \"   )\n  \\~(*)~/\n   | ^ |\n  / ^ \\\n\nNo internet connection? Don't worry, here's a cute bunny to keep you company.",
-  // ASCII art 4
-  "  ____\n / ___| _ __   __ _  ___ _ __\n \\___ \\| '_ \\ / _` |/ _ \\ '__|\n  ___) | |_) | (_| |  __/ |\n |____/| .__/ \\__,_|\\___|_|\n       |_|\n\nOops! Looks like your internet is down. Here's a fancy text to make up for it.",
-  // ASCII art 5
-  "  .----.\n /      \\\n|  O  O |\n| ' _'  |\n|   `   |\n \\_____/ \n\nYou're offline! Here's a friendly snail to remind you to slow down and relax.",
-  // ASCII art 6
-  "   .-\"-.    \n  /[] _ _\\   \n _|_o_LII|_ \n/_  ,____\\ \n  ||  ||  \n\nLost your internet connection? Don't worry, this little guy will guide you through it.",
-  // ASCII art 7
-  "  ,#####,\n(-.___.-)\n(   \"   )\n \\~(*)~/\n  |^ ^|  \n >\\_\\/< \n\nLooks like the internet is out. Here's a penguin to help you chill and wait it out.",
-  // ASCII art 8
-  "   ,---.\n  / / \\ \\\n  ||   || \n  \\_\\ /_/ \n    `\"`\n\nNo internet? No problem! Here's a simple smiley face to brighten up your day.",
-  // ASCII art 9
-  "   ,~.\n  / oo\\_____/|\n (   )       `|\n  \\_/|  |______|\n     \\ -|     |\n     || |     |\n     || |     |\n\nSorry, you're offline. How about a cool dragon to keep you company while you wait for your connection to come back?",
-  // Add more ASCII art here
+export const reconnectMessages = [
+  "Hooray! We're back online. The hamsters are finally running on the wheel again!",
+  "Connection restored! The internet gods have smiled upon us once more.",
+  "You're back online! Did you actually go outside, or just stare at the wall?",
+  "Internet connection established. Time to get back to pretending to work!",
+  "We're back in business! Your existential crisis can officially end now.",
+  "Online again! The pixels are flowing and the memes are loading.",
+  "Signal acquired. The matrix has accepted you back.",
+  "Welcome back to the world wide web. Try not to break it this time.",
 ];
+
+export const images = [
+  `( ͡° ͜ʖ ͡°)`,
+  ` ̿ ̿ ̿'̿'\\̵͇̿̿\\з=(•_•)=ε/̵͇̿̿/'̿'̿ ̿`,
+  `ಠ_ಠ`,
+  `┬─┬ノ( º _ ºノ)`,
+  `(╯°□°）╯︵ ┻━┻`,
+  `(づ｡◕‿‿◕｡)づ`,
+  ` ┌─┐\n ┴─┴\nɷ◡ಠ`,
+  "    /\\_/\\\n   / o o \\\n  /   ^   \\\n /  _____  \\\n/____|____\\|\n\nLooks like your internet connection went down. Here's a cat to keep you company. Meow!",
+  "   ,#####,\n   #_   _#\n   |a` `a|\n   |  u  |\n   \\  =  /\n   |\\___/|\n  /  \\_/  \\\n\nOh no! Your internet connection is lost. How about a robot to help fix things?",
+  "   /\\_/\\\n  / o o \\\n (   \"   )\n  \\~(*)~/\n   | ^ |\n  / ^ \\\n\nNo internet connection? Don't worry, here's a cute bunny to keep you company.",
+  "  ____\n / ___| _ __   __ _  ___ _ __\n \\___ \\| '_ \\ / _` |/ _ \\ '__|\n  ___) | |_) | (_| |  __/ |\n |____/| .__/ \\__,_|\\___|_|\n       |_|\n\nOops! Looks like your internet is down. Here's a fancy text to make up for it.",
+  "  .----.\n /      \\\n|  O  O |\n| ' _'  |\n|   `   |\n \\_____/ \n\nYou're offline! Here's a friendly snail to remind you to slow down and relax.",
+  "   .-\"-.    \n  /[] _ _\\   \n _|_o_LII|_ \n/_  ,____\\ \n  ||  ||  \n\nLost your internet connection? Don't worry, this little guy will guide you through it.",
+  "  ,#####,\n(-.___.-)\n(   \"   )\n \\~(*)~/\n  |^ ^|  \n >\\_\\/< \n\nLooks like the internet is out. Here's a penguin to help you chill and wait it out.",
+  "   ,---.\n  / / \\ \\\n  ||   || \n  \\_\\ /_/ \n    `\"`\n\nNo internet? No problem! Here's a simple smiley face to brighten up your day.",
+  "   ,~.\n  / oo\\_____/|\n (   )       `|\n  \\_/|  |______|\n     \\ -|     |\n     || |     |\n     || |     |\n\nSorry, you're offline. How about a cool dragon to keep you company while you wait for your connection to come back?",
+];
+
+export const SVGs = {
+  wifiOff:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi-off"><line x1="2" x2="22" y1="2" y2="22"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 8.82a15 15 0 0 1 4.17-2.65"/><path d="M10.66 5c4.01-.36 8.14.9 11.34 3.82"/><path d="M16.85 11.4a10 10 0 0 1 1.95 2.1"/><path d="M5 11.82a10 10 0 0 1 3.82-2.1"/><path d="M12 20h.01"/></svg>',
+  wifi: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>',
+};

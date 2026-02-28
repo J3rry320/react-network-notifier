@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  messages as defaultMessageList,
   images as defaultImageList,
+  messages as defaultMessageList,
+  reconnectMessages as defaultReconnectList,
+  SVGs,
 } from "./config";
+import "./styles.css";
+
+type Variant = "toast" | "banner" | "fullscreen";
 
 type Props = {
   messages?: string[];
+  reconnectMessages?: string[];
   images?: string[];
   styles?: React.CSSProperties;
+  variant?: Variant;
+  iconType?: "ascii" | "svg";
+  theme?: "light" | "dark" | "system";
+  closable?: boolean;
 };
 
 const checkInternet = () => {
-  if (typeof window === "undefined") {
-    return true;
-  } else {
-    return window.navigator.onLine;
-  }
+  if (typeof window === "undefined") return true;
+  return window.navigator.onLine;
 };
 
 const getRandomItem = (list: any[]) => {
@@ -24,78 +31,135 @@ const getRandomItem = (list: any[]) => {
 
 const NetworkNotifier: React.FC<Props> = ({
   messages = defaultMessageList,
+  reconnectMessages = defaultReconnectList,
   images = defaultImageList,
   styles,
+  variant = "fullscreen",
+  iconType = "ascii",
+  theme = "system",
+  closable = true,
 }) => {
   const [isOnline, setIsOnline] = useState(checkInternet());
+  const [isVisible, setIsVisible] = useState(false);
+  const [justReconnected, setJustReconnected] = useState(false);
   const [message, setMessage] = useState("");
+  const [reconnectMessage, setReconnectMessage] = useState(getRandomItem(reconnectMessages));
   const [image, setImage] = useState("");
 
-  const defaultStyles: React.CSSProperties = {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    textAlign: "center",
-    zIndex: 9999,
-    borderRadius: "8px",
-    padding: "32px",
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-    fontFamily: "Arial, sans-serif",
-    color: "#333",
-    maxWidth: "80%",
-    maxHeight: "80vh",
-    overflow: "auto",
-    background: "#83a4d4", // Fallback background color
-
-    backgroundColor: "linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%)", // Standard linear gradient
-  };
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const handleConnectionChange = () => {
-      const isConnected = checkInternet();
-      setIsOnline(isConnected);
-
-      if (!isConnected) {
-        setMessage(getRandomItem(messages));
-        setImage(getRandomItem(images));
+    const updateTheme = () => {
+      if (theme === "system") {
+        setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      } else {
+        setIsDark(theme === "dark");
       }
     };
 
+    updateTheme();
+
+    if (theme === "system" && typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
+      mediaQuery.addEventListener("change", handler);
+      return () => mediaQuery.removeEventListener("change", handler);
+    }
+  }, [theme]);
+
+  useEffect(() => {
+    const initialOnline = checkInternet();
+    setIsOnline(initialOnline);
+    if (!initialOnline) {
+      setMessage(getRandomItem(messages));
+      setImage(getRandomItem(images));
+      setIsVisible(true);
+    }
+
+    const handleOffline = () => {
+      setIsOnline(false);
+      setJustReconnected(false);
+      setMessage(getRandomItem(messages));
+      setImage(getRandomItem(images));
+      setIsVisible(true);
+    };
+
+    const handleOnline = () => {
+      setIsOnline(true);
+      setReconnectMessage(getRandomItem(reconnectMessages));
+      setJustReconnected(true);
+
+      setTimeout(() => {
+        setIsVisible(false);
+        setTimeout(() => setJustReconnected(false), 500);
+      }, 3000);
+    };
+
     if (typeof window !== "undefined") {
-      window.addEventListener("offline", handleConnectionChange);
-      window.addEventListener("online", handleConnectionChange);
+      window.addEventListener("offline", handleOffline);
+      window.addEventListener("online", handleOnline);
 
       return () => {
-        window.removeEventListener("offline", handleConnectionChange);
-        window.removeEventListener("online", handleConnectionChange);
+        window.removeEventListener("offline", handleOffline);
+        window.removeEventListener("online", handleOnline);
       };
     }
   }, []);
 
-  if (!isOnline) {
-    return (
-      <div style={{ ...defaultStyles, ...styles }}>
-        <pre
-          style={{ fontSize: "14px", lineHeight: "18px", marginBottom: "16px" }}
-        >
-          {image}
-        </pre>
-        <p
-          style={{
-            fontSize: "18px",
-            fontWeight: 500,
-            lineHeight: "24px",
-            marginBottom: 0,
-          }}
-        >
-          {message}
-        </p>
-      </div>
-    );
-  }
+  if (isOnline && !justReconnected) return null;
 
-  return null;
+  return (
+    <div
+      className={`rn-notifier-container rn-variant-${variant} ${isVisible ? "rn-visible" : ""}`}
+      style={styles}
+      data-theme={isDark ? "dark" : "light"}
+      role="alert"
+      aria-live="assertive"
+    >
+      <div className="rn-card">
+        {/* ICON */}
+        <div className={`rn-icon-container ${justReconnected ? "rn-icon-success" : "rn-icon-danger"}`}>
+          {iconType === "svg" ? (
+            <div dangerouslySetInnerHTML={{ __html: justReconnected ? SVGs.wifi : SVGs.wifiOff }} />
+          ) : (
+            <pre className="rn-icon-pre">
+              {justReconnected ? "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧" : image}
+            </pre>
+          )}
+        </div>
+
+        {/* TEXT */}
+        <div className="rn-text-content">
+          {justReconnected ? (
+            <div className="rn-reconnected-text">
+              {reconnectMessage}
+            </div>
+          ) : (
+            <>
+              {variant === "fullscreen" && (
+                <div className="rn-title">Connection Lost</div>
+              )}
+              <div className="rn-message-body">{message}</div>
+            </>
+          )}
+        </div>
+
+        {/* CLOSE BUTTON */}
+        {!justReconnected && closable && (
+          <button
+            className="rn-close-button"
+            onClick={() => setIsVisible(false)}
+            aria-label="Dismiss offline notification"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default NetworkNotifier;

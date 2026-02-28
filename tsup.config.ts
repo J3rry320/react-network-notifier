@@ -8,5 +8,6 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   treeshake: true,
+  injectStyle: true, // Automatically inject imported CSS
   external: ["react", "react-dom"], // Don't bundle React
 });

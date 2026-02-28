@@ -1,6 +1,6 @@
 {
   "name": "react-network-notifier",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "A fun and witty React component that displays humorous messages and images when the internet connection is lost, keeping your users entertained while they wait for the connection to return.",
   "scripts": {
     "build": "tsup",
@@ -39,9 +39,19 @@
     "images",
     "messages",
     "SSR",
-    "SEO"
+    "SEO",
+    "offline-ux",
+    "UI",
+    "toast",
+    "banner",
+    "ux",
+    "component"
   ],
-  "author": "J3rry Sa7pa7hy",
+  "author": {
+    "name": "Code Media Labs",
+    "email": "rutuparna.satpathy01@gmail.com",
+    "url": "https://codemedialabs.in"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/J3rry320/react-network-notifier/issues"
