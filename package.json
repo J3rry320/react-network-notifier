@@ -1,6 +1,6 @@
 {
   "name": "react-network-notifier",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A fun and witty React component that displays humorous messages and images when the internet connection is lost, keeping your users entertained while they wait for the connection to return.",
   "scripts": {
     "build": "tsup",

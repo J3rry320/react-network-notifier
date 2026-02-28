@@ -10,14 +10,36 @@ import "./styles.css";
 type Variant = "toast" | "banner" | "fullscreen";
 
 type Props = {
+  /** Custom offline messages displayed at random. Defaults to the built-in witty message list. */
   messages?: string[];
+  /** Custom reconnection messages shown when the connection is restored. */
   reconnectMessages?: string[];
+  /** Custom ASCII art / image strings displayed at random while offline. */
   images?: string[];
+  /** Inline styles applied to the notifier container element. */
   styles?: React.CSSProperties;
+  /**
+   * Display variant of the notifier.
+   * - `"fullscreen"` — covers the entire viewport (default)
+   * - `"banner"` — a slim strip at the top/bottom of the page
+   * - `"toast"` — a small floating card in the corner
+   */
   variant?: Variant;
+  /**
+   * Icon style used inside the notifier.
+   * - `"ascii"` — fun ASCII art (default)
+   * - `"svg"` — clean SVG Wi-Fi icons
+   */
   iconType?: "ascii" | "svg";
+  /**
+   * Colour theme of the notifier.
+   * - `"system"` — follows the OS preference (default)
+   * - `"light"` / `"dark"` — forced light or dark mode
+   */
   theme?: "light" | "dark" | "system";
+  /** Whether the user can manually dismiss the notifier. Defaults to `true`. */
   closable?: boolean;
+  /** Content rendered beneath the notifier (your normal app tree). */
   children?: React.ReactNode;
 };
 
@@ -30,6 +52,23 @@ const getRandomItem = (list: any[]) => {
   return list[Math.floor(Math.random() * list.length)];
 };
 
+/**
+ * `NetworkNotifier` is a zero-dependency React component that detects online/offline
+ * status and displays a customisable notification to the user.
+ *
+ * @example
+ * ```tsx
+ * import NetworkNotifier from 'react-network-notifier';
+ *
+ * export default function App() {
+ *   return (
+ *     <NetworkNotifier variant="toast" theme="dark">
+ *       <YourApp />
+ *     </NetworkNotifier>
+ *   );
+ * }
+ * ```
+ */
 const NetworkNotifier = ({
   messages = defaultMessageList,
   reconnectMessages = defaultReconnectList,
