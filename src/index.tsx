@@ -30,7 +30,7 @@ const getRandomItem = (list: any[]) => {
   return list[Math.floor(Math.random() * list.length)];
 };
 
-const NetworkNotifier: React.FC<Props> = ({
+const NetworkNotifier = ({
   messages = defaultMessageList,
   reconnectMessages = defaultReconnectList,
   images = defaultImageList,
@@ -40,7 +40,7 @@ const NetworkNotifier: React.FC<Props> = ({
   theme = "system",
   closable = true,
   children,
-}) => {
+}: Props): JSX.Element => {
   const [isOnline, setIsOnline] = useState(checkInternet());
   const [isVisible, setIsVisible] = useState(false);
   const [justReconnected, setJustReconnected] = useState(false);
