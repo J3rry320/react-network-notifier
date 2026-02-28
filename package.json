@@ -58,8 +58,8 @@
   },
   "homepage": "https://github.com/J3rry320/react-network-notifier#readme",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": ">=18 || ^19",
+    "react-dom": ">=18 || ^19"
   },
   "devDependencies": {
     "@types/node": "^25.3.2",
