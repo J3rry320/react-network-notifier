@@ -4,9 +4,14 @@ A highly optimized, zero-dependency React component that elegantly handles inter
 
 Supports both React and Next.js applications, fully compatible with Server-Side Rendering (SSR).
 
-![npm](https://img.shields.io/npm/v/react-network-notifier)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/J3rry320/react-network-notifier/CI)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-network-notifier)
+[![NPM Version](https://img.shields.io/npm/v/react-network-notifier?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/react-network-notifier)
+[![NPM Downloads](https://img.shields.io/npm/dt/react-network-notifier?style=for-the-badge&color=blue)](https://www.npmjs.com/package/react-network-notifier)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/react-network-notifier?style=for-the-badge&label=bundle%20size)](https://bundlephobia.com/package/react-network-notifier)
+[![React Support](https://img.shields.io/badge/React-16.8%2B-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-Compatible-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![License](https://img.shields.io/npm/l/react-network-notifier?style=for-the-badge)](https://github.com/J3rry320/react-network-notifier/blob/main/LICENSE)
+
+![react-network-notifier](https://i.ibb.co/3m1MQrMW/reactnetwork.png)
 
 ## Why We Built This
 
