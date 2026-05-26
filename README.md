@@ -1,6 +1,6 @@
 # React Network Notifier
 
-A highly optimized, zero-dependency React component that elegantly handles internet connection drops. It seamlessly displays witty offline messages and engaging visuals to keep your users entertained while they wait for their connection to return.
+A highly optimised, zero-dependency React component that elegantly handles internet connection drops. It seamlessly displays witty offline messages and engaging visuals to keep your users entertained while they wait for their connection to return.
 
 Supports both React and Next.js applications, fully compatible with Server-Side Rendering (SSR).
 
@@ -103,7 +103,7 @@ export default App;
 | `styles`            | `React.CSSProperties`                 | `{}`           | Inline styles to override or extend default component CSS.    |
 | `variant`           | `"toast" \| "banner" \| "fullscreen"` | `"fullscreen"` | Determines the visual layout and positioning.                 |
 | `iconType`          | `"ascii" \| "svg"`                    | `"ascii"`      | Toggle between retro ASCII graphics or modern SVG icons.      |
-| `theme`             | `"light" \| "dark" \| "system"`       | `"system"`     | Sets the UI color mode (Light, Dark, or Browser preference).  |
+| `theme`             | `"light" \| "dark" \| "system"`       | `"system"`     | Sets the UI colour mode (Light, Dark, or Browser preference).  |
 | `closable`          | `boolean`                             | `true`         | If `true`, allows users to manually dismiss the notification. |
 
 ## Contributing
@@ -121,5 +121,4 @@ This project is maintained by **Code Media Labs**. We are an agency focused on b
 If you like our work and are looking for a reliable technical partner for your next project, feel free to reach out to us:
 
 - **Agency Website**: [codemedialabs.in](https://codemedialabs.in)
-- **Our ERP Platform**: [synapse.codemedialabs.in](https://synapse.codemedialabs.in)
 - **Email**: [rutuparna.satpathy01@gmail.com](mailto:rutuparna.satpathy01@gmail.com)
